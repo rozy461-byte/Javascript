@@ -1,10 +1,7 @@
 pipeline {
 
-    agent {
-        docker {
-            image 'docker:cli'
-            args '-v /var/run/docker.sock:/var/run/docker.sock'
-        }
+    agent any
+        
     }
 
     options {
@@ -15,7 +12,7 @@ pipeline {
     }
 
     environment {
-        APP_NAME = 'java-script'
+        APP_NAME = 'javascript'
         CI_IMAGE = "${APP_NAME}:ci-${env.BUILD_NUMBER}"
     }
 
