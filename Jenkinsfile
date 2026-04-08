@@ -87,7 +87,7 @@ pipeline {
                     
 
                     echo "2. Checking Node.js inside image..."
-                    docker run --rm --entrypoint node ${CI_IMAGE} -version
+                    docker run --rm --entrypoint node ${CI_IMAGE} -v
                     echo "✅ Node.js OK"
 
                     echo "3. Checking exposed port..."
