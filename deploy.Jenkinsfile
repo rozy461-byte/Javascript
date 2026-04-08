@@ -180,7 +180,7 @@ pipeline {
                                         --restart unless-stopped \\
                                         --network private-net \\
                                         --env-file ${ENV_FILE} \\
-                                        -p ${APP_PORT}:8000 \\
+                                        -p ${APP_PORT}:${APP_PORT} \\
                                         \${DOCKER_IMAGE}:${IMAGE_TAG}
                                     
                                     # Verify
