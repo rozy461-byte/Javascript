@@ -81,13 +81,13 @@ pipeline {
                     echo "=== Image Verification ==="
 
                     echo "1. Checking app file exists inside image..."
-                    docker run --rm --entrypoint ls ${CI_IMAGE} -lh /app/index.js \
-                    || { echo "❌ index.js not found"; exit 1; }
+                    docker run --rm --entrypoint ls ${CI_IMAGE} -lh /app/node.js \
+                    || { echo "❌ node.js not found"; exit 1; }
                     echo "✅ App file found"r
                     
 
                     echo "2. Checking Node.js inside image..."
-                    docker run --rm --entrypoint java ${CI_IMAGE} -version
+                    docker run --rm --entrypoint node ${CI_IMAGE} -version
                     echo "✅ Node.js OK"
 
                     echo "3. Checking exposed port..."
