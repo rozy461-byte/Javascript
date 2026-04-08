@@ -39,4 +39,4 @@ USER appuser
 EXPOSE 3000
 
 # Start app
-ENTRYPOINT ["node", "index.js"] 
+ENTRYPOINT ["node", "node.js"] 
